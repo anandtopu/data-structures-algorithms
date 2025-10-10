@@ -67,17 +67,17 @@ Rank is clearly 1.'''
 class Solution:
 	# @param A : string
 	# @return an integer
-	def findRank(self, A):
-        MOD = 1000003
-        N = len(A)
-        fact = [1] * (N + 1)
-        for i in range(1, N + 1):
-            fact[i] = fact[i - 1] * i % MOD
-        rank = 1
-        unused = list(A)
-        for i in range(N):
-            unused.sort()
-            cnt = sum(1 for c in unused if c < A[i])
-            rank = (rank + cnt * fact[N - 1 - i]) % MOD
-            unused.remove(A[i])
-        return rank
+	def findRank(self, B):
+         MOD = 1000003
+         N = len(B)
+         fact = [1] * (N + 1)
+         for i in range(1, N + 1):
+             fact[i] = fact[i - 1] * i % MOD
+         rank = 1
+         unused = list(B)
+         for i in range(N):
+             unused.sort()
+             cnt = sum(1 for c in unused if c < c[i])
+             rank = (rank + cnt * fact[N - 1 - i]) % MOD
+             unused.remove(B[i])
+         return rank
