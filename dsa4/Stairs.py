@@ -45,6 +45,26 @@ Output 1:
 Output 2:
 
  3'''
+from re import A
+MOD = 1000000007
+
+class SolutionDP:
+    # @param A : integer
+    # @return an integer
+    def climbStairs(self, A):
+        if A <= 0:
+            return 0
+        if A == 1:
+            return 1
+        if A == 2:
+            return 2
+
+        prev1, prev2 = 1, 2
+        for _ in range(3, A + 1):
+            curr = (prev1 + prev2) % MOD
+            prev1, prev2 = prev2, curr
+        return prev2
+
 class SolutionExponentiation:
     def climbStairs(self, A):
         MOD = 1000000007
@@ -76,20 +96,3 @@ class SolutionExponentiation:
 
         # f(n) = res[0][0]*f(2) + res[0][1]*f(1)
         return (res[0][0] * 2 + res[0][1] * 1) % MOD
-
-class SolutionDP:
-	# @param A : integer
-	# @return an integer
-	def climbStairs(self, A):
-        MOD = 1000000007
-        if A == 1:
-            return 1
-        if A == 2:
-            return 2
-
-        prev1, prev2 = 1, 2
-        for _ in range(3, A + 1):
-            curr = (prev1 + prev2) % MOD
-            prev1, prev2 = prev2, curr
-
-        return prev2
