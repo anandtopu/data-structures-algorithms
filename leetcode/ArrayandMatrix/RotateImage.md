@@ -229,5 +229,3 @@ Sources: Internal analysis based on algorithmic structure and empirical performa
   - You prefer matrix operations over index math.
 
 ---
-
-I can walk you through how to generalize these methods for counter-clockwise rotation or 180° rotation next.
