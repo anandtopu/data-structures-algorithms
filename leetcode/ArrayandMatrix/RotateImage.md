@@ -116,8 +116,6 @@ For `matrix = [[1,2,3],[4,5,6],[7,8,9]]`:
 
 ---
 
-Would you like a visual diagram of the rotation steps or a version of this algorithm using a different approach (like transpose + reverse)?
-
 
 
 Let's explore an alternative and visually intuitive method to rotate an \( n \times n \) matrix 90 degrees clockwise — using the **transpose + reverse** approach.
